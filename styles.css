@@ -114,6 +114,12 @@ footer {
     overflow: hidden; /* Important if images are larger than this height */
 }
 
+@media screen and (max-width: 768px) {
+    .mySlides {
+        height: 300px; /* Smaller height for phones */
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .mySlides {
         height: 600px; /* Taller height for laptop screens */
