@@ -2,6 +2,9 @@ body {
     font-family: 'Open Sans', Arial, sans-serif;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #F7F7F7;
+    margin: 0;
+    padding: 0;
+    min-width: 374px;
 }
 
 header h1 {
@@ -83,6 +86,7 @@ button:hover {
 
 footer {
     display: flex;
+    flex-wrap: wrap;
     background-color: #8BC34A;
     color: whitesmoke;
     justify-content: space-around;
@@ -91,6 +95,10 @@ footer {
     position: sticky;
     padding: 30px;
     margin-top: 30px;
+}
+
+.map iframe {
+    border:0; 
 }
 
 @media screen and (max-width: 768px) {
