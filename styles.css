@@ -94,7 +94,6 @@ footer {
     gap: 20px;
     position: sticky;
     padding: 30px;
-    margin-top: 30px;
 }
 
 .map iframe {
@@ -197,4 +196,3 @@ footer {
   to {opacity: 1}
 }
 
-/* ... rest of your CSS for body, header, nav, featured, pet-list, pet, button, footer, map, dot, etc. ... */
