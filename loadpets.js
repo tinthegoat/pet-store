@@ -77,7 +77,40 @@ function loadPets() {
         `;
         petList.append(newPet)
     })
+
+    $('input[name="pet-type"]').on("change", function () {
+        filterPets();
+    });
 }
 
-document.addEventListener('DOMContentLoaded', loadPets);
+function filterPets() {
+    console.log("Selected pet type:", $('input[name="pet-type"]:checked').val())
+    const types = $('input[name="pet-type"]:checked')
+    .map(function () {
+        return $(this).val();
+    })
+    .get();
+
+    console.log(types);
+    const filteredPets = pets.filter((pet) => types.includes(pet.type));
+    console.log(filterPets);
+
+    const petList = $("#pet-list");
+    petList.empty();
+
+    filteredPets.forEach((pet) => {
+        const petItem = $("<div>").addClass("pet").html(`
+        <img src = "${pet.img}" alt = "${pet.name}">
+        <h3>${pet.name}</h3>
+        <p>Type: ${pet.type}</p>
+        <p>Age: ${pet.age}</p>
+        <button onclick="adoptPet()">Adopt Now</button>
+        `);
+        petList.append(petItem);
+    });
+}
+
+
+
+$(document).ready(loadPets);
 console.log("Pets loaded pawfectly!")
